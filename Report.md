@@ -70,7 +70,7 @@ Let's take a look at the efficiency of diiferent algorithms to solve the environ
 |Deep-Q-Network   | 331  | 13.01 | 18.00 | 9.71 |
 |Double Deep-Q_Network with Duel Architecture | 307 | 13.00 | 16.00 | 6.00|
 |Double Deep-Q-Network | 293 | 13.01 | 19.00 | 12.75|
-|Deep-Q-Network with Duel Architecture | 258 | 13.05 | 16.00 | 6.00|  
+|Deep-Q-Network with Duel Architecture | 268 | 13.05 | 16.00 | 6.00|  
 
 #### Selected Hyperparameters:
 The research paper of the DQN [avilable here](https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf) suggested the following hyperparameters for the DQN implementations for the Atari Games. The Hyperparameters works quite well in this scenario too with a few little or no tweaks. 
@@ -88,4 +88,6 @@ The research paper of the DQN [avilable here](https://storage.googleapis.com/dee
 | Q-Network Parameters Update Frequency from Experience Replay Buffer | 4  |
 | Tau (τ) For Soft-Update of the Target Network                         |   1e-3          |
 
+#### A Note About the Future:
 
+Although the model gets solved by the DQN with Dueling Architecture much faster however, we get lower average score in terms of playing with the saved trained weights. However the Double DQN converges a little bit slower than the Dueling DQN but is able to achieve higher scores in terms of playing with the saved trained weights. So, for this task scenario, a Double DQN architecture will be more performant than the other variants. 
