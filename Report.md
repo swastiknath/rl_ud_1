@@ -47,13 +47,19 @@ In order to get the model solved we implemented a **Deep Q Network** which uses 
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\bg_white&space;\fn_jvn&space;Y_t^{DQN}=R_{(t&plus;1)}&plus;&space;\gamma&space;max_aQ(S_{(t&plus;1)},a,\theta_t^{-}&space;)" target="_blank"><img src="https://latex.codecogs.com/png.latex?\inline&space;\bg_white&space;\fn_jvn&space;Y_t^{DQN}=R_{(t&plus;1)}&plus;&space;\gamma&space;max_aQ(S_{(t&plus;1)},a,\theta_t^{-}&space;)" title="Y_t^{DQN}=R_{(t+1)}+ \gamma max_aQ(S_{(t+1)},a,\theta_t^{-} )" /></a>
 
+![Deep Q Network Training](https://github.com/swastiknath/rl_ud_1/blob/master/images/dqn_normal.png)  ![From DQN Saved CheckPoint](https://github.com/swastiknath/rl_ud_1/blob/master/images/dqn_normal2.png)
+
 We use the **Double Q Learning** Algorithm to mitigate potential overestimation of the Action(Q) values. In the case of Double Q Learning algorithm two action-value functions are learned by assigning each experience randomly to update one of the two value functions leading to two sets of weights. Among these sets of weights one is used to determine the greedy policy and the another one is used to determine the correspoding action-value. Q-Learning target can be specified as the following:
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\bg_white&space;\fn_jvn&space;Y_t^Q=R_{(t&plus;1)}&plus;&space;\gamma&space;Q(S_{(t&plus;1)}&space;argmax_aQ(S_{(t&plus;1)},a,\theta&space;_t&space;);\theta&space;_t)" target="_blank"><img src="https://latex.codecogs.com/png.latex?\inline&space;\bg_white&space;\fn_jvn&space;Y_t^Q=R_{(t&plus;1)}&plus;&space;\gamma&space;Q(S_{(t&plus;1)}&space;argmax_aQ(S_{(t&plus;1)},a,\theta&space;_t&space;);\theta&space;_t)" title="Y_t^Q=R_{(t+1)}+ \gamma Q(S_{(t+1)} argmax_aQ(S_{(t+1)},a,\theta _t );\theta _t)" /></a>
 
+![](https://github.com/swastiknath/rl_ud_1/blob/master/images/double_dqn.png) ![](https://github.com/swastiknath/rl_ud_1/blob/master/images/double_dqn_2.png)
+
 We have also implemented the **Dueling Network** Architecture for our algorithm here for better evaluation of the model-free policy. Dueling Networks represents two seperate estimators one for the state-value function and another one is the state-dependent action advantage function. The main benefit of these estimators is to generalize the learning across different actions. The Action Value Estimation can be written as the following: 
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\bg_white&space;\fn_jvn&space;Q(s,&space;a;&space;\theta&space;,&space;\alpha&space;,&space;\beta&space;)&space;=&space;V(s;&space;\theta&space;,&space;\beta&space;)&space;&plus;&space;A(s,&space;a;&space;\theta&space;,&space;\alpha&space;)" target="_blank"><img src="https://latex.codecogs.com/png.latex?\inline&space;\bg_white&space;\fn_jvn&space;Q(s,&space;a;&space;\theta&space;,&space;\alpha&space;,&space;\beta&space;)&space;=&space;V(s;&space;\theta&space;,&space;\beta&space;)&space;&plus;&space;A(s,&space;a;&space;\theta&space;,&space;\alpha&space;)" title="Q(s, a; \theta , \alpha , \beta ) = V(s; \theta , \beta ) + A(s, a; \theta , \alpha )" /></a>
+
+![](https://github.com/swastiknath/rl_ud_1/blob/master/images/duel_dqn.png)  ![](https://github.com/swastiknath/rl_ud_1/blob/master/images/duel_dqn2.png)
 
 #### Performance Scenario:
 
